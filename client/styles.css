@@ -1,0 +1,412 @@
+/* CSS Variables */
+:root {
+    --background-color: #f2f3f7;
+    --text-color: #333;
+    --sidebar-background: #2c3e50;
+    --sidebar-text-color: #ecf0f1;
+    --input-background: #ffffff;
+    --button-background: #3498db;
+    --button-hover-background: #2980b9;
+    --messages-background: #ffffff;
+    --message-border: #e3e6ec;
+    --pipboy-green: #1d5327; /* Pip-Boy green */
+    --pipboy-yellow: #f0ad4e; /* Pip-Boy yellow */
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --sidebar-background: #1e1e1e;
+    --sidebar-text-color: #c5c6c7;
+    --input-background: #2a2a2a;
+    --button-background: #4ecca3;
+    --button-hover-background: #3ea482;
+    --messages-background: #1b1b1b;
+    --message-border: #333333;
+}
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Chatroom Container */
+#chatroom {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    background: var(--input-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid var(--message-border);
+}
+
+/* Sidebar */
+#sidebar {
+    width: 240px;
+    background: var(--sidebar-background);
+    color: var(--sidebar-text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Input and Buttons */
+input, button {
+    background: var(--input-background);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+button {
+    background: var(--button-background);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--button-hover-background);
+}
+
+/* Messages */
+#messages {
+    flex-grow: 1;
+    background: var(--messages-background);
+    border: 1px solid var(--message-border);
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--pipboy-green);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+#active-users {
+    border-bottom: 1px solid #34495e;
+    padding-bottom: 15px;
+    width: 100%;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+#username {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #34495e;
+    color: white;
+    font-size: 1em;
+}
+
+#sidebar button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #16a085;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#sidebar button:hover {
+    background: #138d75;
+}
+
+#clear-btn {
+    background: #e74c3c;
+}
+
+#clear-btn:hover {
+    background: #c0392b;
+}
+
+/* Main Chat Area */
+#main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--input-background);
+}
+
+#messages {
+    height: 600px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #e3e6ec;
+    border-radius: 10px;
+    background: var(--input-background);
+    overflow-y: scroll;
+    font-size: 0.95em;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Message */
+#messages div {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+#messages div.admin {
+    background: var(--pipboy-yellow);
+    color: white;
+}
+
+#messages div.join {
+    color: green;
+    font-weight: bold;
+}
+
+#messages div.leave {
+    color: red;
+    font-weight: bold;
+}
+
+/* Input Area */
+#input-area {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    align-items: center;
+}
+
+#message {
+    flex: 1;
+    height: 60px;
+    padding: 12px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+}
+
+#input-area button {
+    padding: 12px 10px;
+    border: none;
+    border-radius: 8px;
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#input-area button:hover {
+    background: #2980b9;
+}
+
+#input-area button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Minimalistic Enhancements */
+#main, #sidebar {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}
+
+::-webkit-scrollbar-track {
+    background: #ecf0f1;
+}
+
+.username {
+    font-weight: bold; /* Make the username bold */
+
+}
+.notification {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.notification.join {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.notification.leave {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Chatroom Container */
+#chatroom {
+    display: flex;
+    flex-direction: column; /* Stack sidebar and main vertically */
+    max-width: 1000px;
+    margin: auto;
+    background: var(--input-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed; /* Fixed position for sidebar */
+    left: 0;
+    top: 0;
+    width: 250px; /* Width of the sidebar */
+    height: 100%; /* Full height */
+    background: var(--sidebar-background);
+    color: var(--sidebar-text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    transition: transform 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show sidebar when active */
+#sidebar.active {
+    transform: translateX(0); /* Show sidebar */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    align-self: flex-end; /* Align close button to the top right */
+}
+
+/* Main Chat Area */
+#main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap : 15px;
+    background: var(--input-background);
+}
+
+#messages {
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #e3e6ec;
+    border-radius: 10px;
+    background: var(--input-background);
+    overflow-y: scroll;
+    font-size: 0.95em;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #chatroom {
+        flex-direction: column; /* Stack sidebar and main vertically */
+    }
+
+    #sidebar {
+        width: 85%; /* Full width on mobile */
+    }
+
+    #input-area {
+        flex-direction: column; /* Stack input and button on small screens */
+    }
+
+    #messages {
+        height: 500px; /* Adjust height for mobile */
+    }
+
+    #username-container {
+        flex-direction: column; /* Stack username input and button */
+        width: 100%; 
+    }
+
+    input[type="textbox"] {
+        width: 130%; /* Full width on mobile */
+
+    }
+
+    #username {
+        width: 100%; /* Full width for username input */
+    }
+
+    #clear-btn {
+        width: 100%; /* Full width for clear button */
+    }
+}
