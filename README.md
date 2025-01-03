@@ -61,8 +61,3 @@ We welcome contributions! Please fork the repository, create a feature branch, a
 
 ### **License**
 This project is licensed under the MIT License.
-
----
-
-### **Contact**
-For support or inquiries, email us at `support@samajapp.com`.
